@@ -13,11 +13,9 @@ $maxResults = 10;
 $Ytb = new Youtube($API_key, $channelID, $maxResults);
 foreach ($Ytb->getVideos()->items as $videos) :
     if (isset($videos->id->videoId)):
-        echo "<div class='col-md-4'>
-                <div class='album-cover-img'>
-                    <img src='{$videos->snippet->thumbnails->high->url}' alt='{$videos->snippet->title}' title='{$videos->snippet->title}'>
-                    <a href='https://www.youtube.com/watch?v={$videos->id->videoId}' class='popup-video-btn'><i class='fa fa-play'></i></a>
-                </div>
+        echo "<div>
+                 <img src='{$videos->snippet->thumbnails->high->url}' alt='{$videos->snippet->title}' title='{$videos->snippet->title}'>
+                 <a href='https://www.youtube.com/watch?v={$videos->id->videoId}' class='popup-video-btn'><i class='fa fa-play'></i></a>
             </div>";
     endif;
 endforeach;
