@@ -8,7 +8,7 @@ var_dump($Ytb->getDataVideo('https://www.youtube.com/watch?v=epYKVcHrVr0'));
  //Get videos from channel by YouTube Data API
 $API_key = '[API-DO-YOUTUBE]';
 $channelID = '[ID-DO-CANAL-DO-YOUTUBE]';
-$maxResults = 10;
+$maxResults = 10; //Quantidade de videos a carregar
 
 $Ytb = new Youtube($API_key, $channelID, $maxResults);
 foreach ($Ytb->getVideos()->items as $videos) :
